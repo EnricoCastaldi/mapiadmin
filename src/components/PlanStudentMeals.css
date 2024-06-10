@@ -1,0 +1,338 @@
+.App {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.table-container {
+  display: flex;
+}
+
+.fixed-table {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4; /* Same background color as body to match */
+  z-index: 10;
+}
+
+.fixed-table table,
+.scrollable-table table {
+  border-collapse: collapse;
+}
+
+.fixed-table th,
+.fixed-table td,
+.scrollable-table th,
+.scrollable-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.scrollable-table {
+  overflow-x: auto;
+  max-width: calc(100% - 200px); /* Adjust based on the width of fixed columns */
+  white-space: nowrap;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.calendar-cell {
+  cursor: pointer;
+  min-width: 40px;
+  height: 40px;
+}
+
+.calendar-cell:hover {
+  background-color: #e0e0e0;
+}
+
+.meal-counts,
+.meal-summaries {
+  text-align: left;
+  padding-left: 5px;
+}
+
+.suma-label {
+  text-align: right;
+  font-weight: bold;
+  padding-right: 10px;
+  border-right: 1px solid #ddd; /* Ensures the border is present */
+}
+
+legend label {
+  display: block;
+  margin-top: 10px;
+}
+
+legend input {
+  display: block;
+  margin-top: 5px;
+}
+
+.toggle-explanation {
+  background-color: #32CD32;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.toggle-explanation svg {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.status-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.status-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-container div:nth-child(1) h3 {
+  color: blue;
+}
+
+.status-container div:nth-child(2) h3 {
+  color: green;
+}
+
+.status-container div:nth-child(3) h3 {
+  color: orange;
+}
+
+/* Ensuring fixed and scrollable tables align correctly */
+.fixed-table,
+.scrollable-table {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fixed-table th,
+.fixed-table td,
+.scrollable-table th,
+.scrollable-table td {
+  height: 70px; /* Ensuring consistent row height */
+}
+
+.empty-row {
+  height: 82px; /* Adjust height to match the days row in the scrollable table */
+}
+
+.scrollable-table th,
+.scrollable-table td {
+  background-clip: padding-box; /* Prevent overlap issues */
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.filters input,
+.filters select {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.filters input[type="text"] {
+  width: 180px;
+}
+
+.filters select {
+  width: 200px;
+  padding: 6px;
+}
+
+.scroll-controls {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.scroll-controls button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.scroll-controls input {
+  width: 100px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.fixed-table thead th,
+.scrollable-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f4f4f4; /* Ensure headers have the same background color */
+  z-index: 11;
+}
+
+.fixed-table .empty-row,
+.scrollable-table .empty-row {
+  position: sticky;
+  top: 70px; /* Adjust this value to match the height of your header rows */
+  background-color: #f4f4f4;
+  z-index: 10;
+}
+
+.fixed-first-column {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4;
+  z-index: 20;
+}
+
+.summation-cell {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.fixed-table {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4; /* Same background color as body to match */
+  z-index: 10;
+}
+
+.fixed-first-column {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4;
+  z-index: 20; /* Ensure this is above other elements */
+}
+
+.summation-cell {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4;
+  z-index: 9; /* Lower z-index to ensure it sits below the header cells */
+}
+
+table thead th:first-child,
+table tbody tr:first-child td:first-child,
+table tbody tr:nth-child(2) td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4;
+  z-index: 20;
+}
+
+table tbody tr:nth-last-child(-n+3) td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #f4f4f4;
+  z-index: 20;
+}
+
+.time-display {
+  text-align: left; /* Ensure text inside is left-aligned */
+  margin-left: 0; /* Remove any default margin that might be centering it */
+  display: flex; /* Ensure it's positioned correctly within its container */
+  justify-content: flex-start; /* Align it to the start of its container */
+}
+
+.status-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center align items vertically */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.status-container > div {
+  margin-right: 20px; /* Add some space between the sections */
+}
+
+.status-summary {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%; /* Full width to align with status container */
+}
+
+.status-summary h3 {
+  text-align: center; /* Center the heading */
+  width: 100%; /* Ensure it takes the full width of the container */
+}
+
+.summary-sections {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.summary-section {
+  display: flex;
+  flex-direction: column; /* Ensure the h4 and divs are stacked vertically */
+  align-items: flex-start;
+  margin-right: 20px;
+  flex: 1; /* Distribute space equally among sections */
+}
+
+.summary-section h4 {
+  margin-bottom: 10px; /* Add some space below the title */
+}
+
+.summary-section div {
+  margin-bottom: 5px; /* Add some space between the values */
+}
+
+.summary-section div span {
+  font-weight: bold; /* Make the numeric results bold */
+}

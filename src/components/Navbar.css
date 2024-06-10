@@ -1,0 +1,169 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Background color white */
+    padding: 10px 20px; /* Adjusted padding */
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for separation */
+  }
+  
+  .navbar-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  .logo-img {
+    height: 40px; /* Adjust the logo size */
+    margin-left: 20px; /* Added margin left for the logo */
+  }
+  
+  .links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .links ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .links li {
+    margin: 0 10px; /* Reduced margin for smaller dimensions */
+    position: relative;
+  }
+  
+  .links a {
+    display: flex;
+    align-items: center;
+    color: #000000; /* Light green text color */
+    text-decoration: none;
+    font-size: 14px; /* Reduced font size */
+  }
+  
+  .links a:hover {
+    color: #228B22; /* Darker green on hover */
+  }
+  
+  .links a svg {
+    margin-right: 5px;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+  }
+  
+  .menu-item:hover .submenu {
+    display: block;
+  }
+  
+  .submenu li {
+    margin: 0;
+  }
+  
+  .submenu a {
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap;
+  }
+  
+  .user-info {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .user-name {
+    color: #040e04; /* Light green text color */
+    margin-right: 15px;
+    font-size: 16px; /* Reduced font size */
+  }
+  
+  .logout-btn {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px; /* Added margin right for the logout button */
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Burger Menu */
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #32CD32;
+    margin: 4px;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 768px) {
+    .links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .links.open {
+      display: flex;
+    }
+  
+    .links ul {
+      flex-direction: column;
+    }
+  
+    .links li {
+      margin: 10px 0; /* Adjusted margin for vertical list */
+    }
+  
+    .submenu {
+      position: static;
+      box-shadow: none;
+      padding: 0;
+    }
+  
+    .burger-menu {
+      display: flex;
+    }
+  
+    .navbar-section.user-info {
+      display: none;
+    }
+  }
+  
